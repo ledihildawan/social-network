@@ -1,0 +1,121 @@
+@import "../../../styles.scss";
+
+:host {
+  flex: 1;
+}
+
+.dom-shadow {
+  height: calc(37px - 8px);
+
+  @media (width < 640px) {
+    display: none;
+  }
+}
+
+.grid__container {
+  position: relative;
+  display: flex;
+  gap: 8px;
+
+  @media (width < 640px) {
+    flex-direction: column;
+  }
+
+  > div:first-child {
+    flex: 1 0 calc(65% - 8px);
+  }
+
+  > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 0 calc(30% - 8px);
+
+    @media (width < 640px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.grid__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.grid__title {
+  margin: 0;
+  color: var(--clr-secondary);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.grid__link {
+  @extend %pressableContext;
+
+  color: var(--clr-secondary);
+  font-size: 14px;
+
+  @media (max-width: 992px) {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.grid__item {
+  height: 135px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex: 1 0 calc(50% - 8px);
+  padding: 8px;
+  background: var(--clr-secondary);
+  color: var(--clr-primary);
+
+  @media (width < 575px) {
+    flex: 1 0 100%;
+  }
+}
+
+.grid__item--main {
+  height: 278px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: 1 0 100%;
+
+  .title {
+    margin-bottom: 4px;
+    font-size: 24px;
+  }
+
+  > div:last-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.grid__item--alt {
+  flex: initial;
+
+  @media (width < 640px) {
+    flex: 1 0 calc(50% - 4px);
+  }
+
+  @media (width < 575px) {
+    flex: 1 0 100%;
+  }
+}
+
+.author {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.views {
+  font-size: 12px;
+}

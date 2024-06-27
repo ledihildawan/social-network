@@ -1,0 +1,35 @@
+:host ::ng-deep {
+  app-grid {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .section-container {
+    display: flex;
+    gap: 24px;
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    > div:first-child {
+      flex: 1 0 67.25%;
+
+      @media (max-width: 992px) {
+        flex: 1 0 100%;
+      }
+    }
+
+    > div:last-child {
+      flex: 1 0 32.25%;
+
+      @media (max-width: 992px) {
+        flex: 1 0 100%;
+      }
+    }
+  }
+}

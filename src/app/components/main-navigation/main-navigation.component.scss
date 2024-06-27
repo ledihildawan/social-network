@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+
+.main-navigation {
+  margin: 32px 0;
+}
+
+.main-navigation__container {
+  @extend %container;
+
+  border-top: 1px solid var(--clr-secondary);
+  border-bottom: 1px solid var(--clr-secondary);
+  padding: 16px 0;
+
+  @media (width < 720px) {
+    overflow: auto;
+  }
+}
+
+.main-navigation__list {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    color: var(--clr-secondary);
+    font-size: 18px;
+
+    a {
+      @extend %pressableContext;
+
+      color: inherit;
+    }
+
+    &:not(:last-child)::after {
+      content: "/";
+      margin-left: 8px;
+    }
+  }
+}

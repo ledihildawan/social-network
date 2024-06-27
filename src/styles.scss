@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --layoutWidth: 1080px;
+  --columnPaddingNormal: 16px;
+
+  --clr-primary: #953e46;
+  --clr-secondary: #f7e2cf;
+
+  --ff-primary: "Roboto", sans-serif;
+}
+
+%pressableContext {
+  z-index: 1;
+  vertical-align: middle;
+  word-break: normal;
+  transition: color 0.24s;
+  appearance: none;
+  user-select: auto;
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  flex: 0 auto;
+  margin: 0;
+  text-decoration: none;
+  position: relative;
+}
+
+%container {
+  width: 100%;
+  max-width: calc(var(--columnPaddingNormal) * 2 + var(--layoutWidth));
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-primary);
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+.container {
+  @extend %container;
+}

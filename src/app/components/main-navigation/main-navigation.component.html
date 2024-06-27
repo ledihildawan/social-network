@@ -1,0 +1,11 @@
+<nav class="main-navigation">
+  <div class="main-navigation__container">
+    <ul class="main-navigation__list">
+      @for (mainNavigationItem of mainNavigationItems; track $index) {
+      <li>
+        <a [href]="mainNavigationItem.link">{{ mainNavigationItem.label }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+</nav>

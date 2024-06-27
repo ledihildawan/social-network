@@ -1,0 +1,35 @@
+<footer class="main-footer">
+  <div class="main-footer__container">
+    <ul class="social-media">
+      @for (social of socials; track $index) {
+      <li class="social-media__item">
+        <a class="social-media__link" [href]="social.link">
+          <i [class]="'fa-brands ' + social.icon"></i>
+        </a>
+      </li>
+      }
+    </ul>
+
+    <nav class="main-footer__navigation">
+      <ul>
+        @for (navigationItem of navigationItems; track $index) {
+        <li>
+          <a [href]="navigationItem.link">{{ navigationItem.label }}</a>
+        </li>
+        }
+      </ul>
+    </nav>
+
+    <p class="copyright">&copy; 2013 companyname inc.</p>
+
+    <nav class="main-footer__navigation main-footer__navigation--alt">
+      <ul>
+        @for (altNavigationItem of altNavigationItems; track $index) {
+        <li>
+          <a [href]="altNavigationItem.link">{{ altNavigationItem.label }}</a>
+        </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</footer>
